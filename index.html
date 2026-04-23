@@ -664,6 +664,77 @@
       .footer__grid { grid-template-columns: 1fr; gap: 36px; }
     }
 
+    /* ---------- Photo swaps ---------- */
+    .hero__portrait { background: #1a3d24; }
+    .hero__portrait-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+    .about__img { position: relative; }
+    .about__img-el {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    /* ---------- Gallery (Life in Legacy) ---------- */
+    .gallery { background: var(--cream); }
+    .gallery__header { max-width: 760px; margin-bottom: 56px; }
+    .gallery__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .gallery__item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 2px;
+      background: var(--cream-deep);
+      box-shadow: 0 18px 40px -28px rgba(26, 92, 42, 0.4);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      aspect-ratio: 1 / 1;
+      margin: 0;
+    }
+    .gallery__item--feature {
+      grid-column: span 4;
+      aspect-ratio: 21 / 9;
+    }
+    .gallery__item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 60px -30px rgba(26, 92, 42, 0.55);
+    }
+    .gallery__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+    .gallery__item:hover img { transform: scale(1.04); }
+    .gallery__item figcaption {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 46px 22px 20px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--cream);
+      background: linear-gradient(180deg, rgba(19, 64, 32, 0) 0%, rgba(19, 64, 32, 0.92) 85%);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .gallery__item:hover figcaption { opacity: 1; transform: translateY(0); }
+    @media (max-width: 820px) {
+      .gallery__grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery__item--feature { grid-column: span 2; aspect-ratio: 16 / 10; }
+    }
+
     /* ---------- Scroll reveal ---------- */
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -706,10 +777,7 @@
         </div>
       </div>
       <div class="hero__portrait">
-        <div class="portrait-placeholder">
-          Portrait of Dr. Sybil C. Mobley
-          <span>Replace with mobley2.jpeg</span>
-        </div>
+        <img src="mobley2.jpeg" alt="Dr. Sybil Collins Mobley" class="hero__portrait-img">
       </div>
     </div>
   </section>
@@ -718,9 +786,8 @@
   <section class="about reveal" id="about">
     <div class="container about__grid">
       <div class="about__imgcol">
-        <div class="about__img portrait-placeholder">
-          Archival portrait placeholder
-          <span>Swap with a second photo</span>
+        <div class="about__img">
+          <img src="mobley1.jpeg" alt="Dr. Mobley in her office at FAMU" class="about__img-el">
         </div>
         <p class="about__caption">Dr. Sybil Collins Mobley, founding Dean, FAMU School of Business and Industry.</p>
       </div>
@@ -733,7 +800,7 @@
           <p>In 1974, she founded the School of Business and Industry (SBI) — a program that combined rigorous academics, mandatory corporate internships, and a world-renowned Professional Leadership Development program to produce graduates working in 60 countries.</p>
           <p>She served on the boards of seven Fortune 500 companies, consulted for the U.S. government across Africa, and personally recruited generations of students she called her "SBI Superstars." She did not take no from anyone who didn't have the authority to say yes.</p>
         </div>
-        <a href="#" class="btn btn--ghost about__cta">Read the Full Biography &rarr;</a>
+        <a href="biography.html" class="btn btn--ghost about__cta">Read the Full Biography &rarr;</a>
       </div>
     </div>
   </section>
@@ -745,13 +812,13 @@
         <span class="eyebrow">Our Mission</span>
         <h2 class="mv-heading">Why we exist.</h2>
         <p class="mv-statement">To preserve, protect, and authentically advance the legacy, vision, and impact of Dr. Sybil C. Mobley — ensuring that her contributions to business education, racial equity, and Black excellence continue to inspire and shape future generations.</p>
-        <p class="mv-note">The Legacy Project operates with one guiding conviction, from the words Dr. Mobley made famous among generations of students: "No excuse is acceptable." We steward her name, her story, and her standards with the same rigor and integrity she brought to every institution she touched.</p>
+        <p class="mv-note">The Legacy Project operates with one guiding conviction, from the words Dr. Mobley made famous among generations of students: &ldquo;No excuse is acceptable.&rdquo; We steward her name, her story, and her standards with the same rigor and integrity she brought to every institution she touched.</p>
       </div>
       <div class="mv-block">
         <span class="eyebrow">Our Vision</span>
         <h2 class="mv-heading">What we're building.</h2>
         <p class="mv-statement">A world where Dr. Mobley's pioneering model of excellence — fusing academic mastery, corporate access, and unapologetic Black ambition — is recognized, protected, and replicated as a blueprint for equitable economic transformation.</p>
-        <p class="mv-note">We envision a nationally recognized organization that carries her innovations forward: into entrepreneurship, into technology, into community development, and into the next generation of leaders she never stopped believing in.</p>
+        <p class="mv-note">We envision a nationally recognized institution that carries her innovations forward: into entrepreneurship, into technology, into community development, and into the next generation of business leaders she never stopped believing in.</p>
       </div>
     </div>
   </section>
@@ -763,6 +830,39 @@
         "No excuse is acceptable. No amount of effort is adequate until proven effective." — Dr. Sybil C. Mobley
         <cite>Founding Principle</cite>
       </blockquote>
+    </div>
+  </section>
+
+  <!-- LIFE IN LEGACY (gallery) -->
+  <section class="gallery reveal">
+    <div class="container">
+      <div class="gallery__header">
+        <span class="eyebrow">Life in Legacy</span>
+        <h2 class="section-title">A life documented. A legacy lived.</h2>
+        <p class="section-lede">Moments from a career that built one of the most celebrated business programs in the world — in her classrooms, in her community, and among the students and partners she inspired.</p>
+      </div>
+      <div class="gallery__grid">
+        <figure class="gallery__item gallery__item--feature">
+          <img src="mobley4.jpg" alt="Dr. Mobley with her SBI students">
+          <figcaption>With the students she called her &ldquo;SBI Superstars.&rdquo;</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="mobley5.jpg" alt="The FAMU School of Business and Industry building">
+          <figcaption>The institution she built — the School of Business and Industry.</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="mobley6.jpg" alt="Dr. Mobley with corporate guests and students, 1970s">
+          <figcaption>Corporate partners meeting the students she connected them to.</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="mobley7.jpg" alt="Dr. Mobley receiving a flower from students">
+          <figcaption>A quiet moment with the students who loved her back.</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="mobley8.jpg" alt="Thank-you letter from President Bill Clinton">
+          <figcaption>One of many honors — a thank-you letter from President Bill Clinton.</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
