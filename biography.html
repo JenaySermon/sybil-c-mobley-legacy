@@ -154,7 +154,7 @@
     nav ul {
       display: flex;
       list-style: none;
-      gap: 32px;
+      gap: 28px;
     }
     nav a {
       font-size: 13px;
@@ -162,11 +162,12 @@
       letter-spacing: 0.14em;
       color: var(--charcoal);
     }
+    nav a.current { color: var(--harvest); }
     .header__cta {
       padding: 10px 20px;
       font-size: 12px;
     }
-    @media (max-width: 820px) {
+    @media (max-width: 900px) {
       nav { display: none; }
     }
 
@@ -312,6 +313,36 @@
       margin-top: 16px;
       font-weight: 700;
     }
+
+    /* Honors list */
+    .article .honors-list {
+      list-style: none;
+      margin: 8px 0 36px;
+      padding: 24px 28px;
+      background: var(--cream-deep);
+      border-left: 3px solid var(--gold);
+      border-radius: 2px;
+    }
+    .article .honors-list li {
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--charcoal);
+      padding: 8px 0 8px 22px;
+      position: relative;
+      border-bottom: 1px solid rgba(26, 92, 42, 0.08);
+    }
+    .article .honors-list li:last-child { border-bottom: none; }
+    .article .honors-list li::before {
+      content: "◆";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      color: var(--harvest);
+      font-size: 10px;
+    }
+
+    /* Inline italics for publication titles, etc. */
+    .article em, .article i { font-style: italic; color: var(--forest-deep); }
 
     /* ---------- Highlights strip ---------- */
     .highlights {
@@ -463,9 +494,10 @@
       <nav>
         <ul>
           <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#mission">Mission</a></li>
+          <li><a href="biography.html" class="current">Biography</a></li>
           <li><a href="index.html#programs">Programs</a></li>
-          <li><a href="index.html#support">Support</a></li>
+          <li><a href="partners.html">Legacy Partners</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <a href="index.html#support" class="btn btn--primary header__cta">Support the Legacy</a>
@@ -491,48 +523,98 @@
   <section class="article">
     <div class="container container--narrow">
 
-      <p>Dr. Sybil Collins Mobley is remembered as the founding Dean of the School of Business and Industry at Florida A&amp;M University &mdash; but her life&rsquo;s work was far larger than any one title. Over a career that spanned nearly six decades at a single institution, she built something that had never existed before: a school where rigor, corporate access, and unapologetic Black excellence were not separate pursuits, but the same pursuit. Her students didn&rsquo;t simply graduate. They entered the world already on the inside.</p>
+      <h2>The Family That Made Her</h2>
 
-      <h2>The Long Arrival</h2>
+      <p>Sybil Lenora Collins was born on October 14, 1925, in Shreveport, Louisiana &mdash; the fourth of five children born to Melvin Lee Collins, Sr. and Cora Jones Collins.</p>
 
-      <p>She came to Florida A&amp;M University in 1945 as a clerk-typist. She would not leave for fifty-eight years. In a career trajectory that is rare in any era, she rose through the institution from administrative staff into teaching, earned advanced degrees while working, and eventually became the founding architect of the business program that would define her legacy. The discipline of those early years &mdash; the precision, the standards, the quiet work done without credit &mdash; shaped everything that came after.</p>
+      <p>Her father was no ordinary man. Melvin Lee Collins, Sr. was the first Black educator in Caddo Parish &mdash; and an entrepreneur whose ambitions matched his convictions. He founded <em>The Shreveport Sun,</em> the second Black newspaper in the United States, giving his community a voice at a time when the mainstream press refused to see them. Her mother, Cora, was a public school teacher who did not wait for the school system to meet her children&rsquo;s potential. She homeschooled all five of her children with such rigor that every one of them entered school already performing at the third grade level.</p>
 
-      <p>She earned her doctorate in accounting and went on to teach in FAMU&rsquo;s business division at a time when the number of Black women holding that credential could be counted in the single digits. She understood, from the beginning, that excellence was not a matter of permission. It was a matter of preparation.</p>
+      <p>This was the household that shaped Sybil Collins: one where excellence was the floor, not the ceiling, and where building institutions was understood as a form of love.</p>
 
-      <h2>Founding the School of Business and Industry</h2>
+      <h2>A Head Start, Then a Long Wait</h2>
 
-      <p>In 1974, FAMU chartered a new school, and Dr. Mobley was named its founding Dean. The School of Business and Industry &mdash; SBI &mdash; was her design from the ground up. It was built on three principles that, taken together, had never been combined in a predominantly Black institution of higher learning: academic rigor on par with any top business school in the country, mandatory corporate internships every summer so that no student graduated without real-world credentials, and a Professional Leadership Development curriculum that taught students how to walk into any boardroom in America and belong there.</p>
+      <p>Sybil completed her parochial and public schooling in Shreveport at the age of sixteen. By twenty, she had earned her Bachelor of Arts in Sociology from Bishop College in Marshall, Texas &mdash; a historically Black institution where she was, by every account, an exceptional student.</p>
 
-      <p>She called her students &ldquo;SBI Superstars,&rdquo; and she meant it literally. She recruited them personally, trained them relentlessly, and placed them strategically. Her graduates went on to work in more than sixty countries, inside the Fortune 500, the federal government, multinational banks, and consulting firms that had previously had almost no Black talent pipeline at all.</p>
+      <p>Job opportunities for a young Black woman in postwar America were limited. In 1945, Sybil Collins accepted a position as a clerk-typist in the Business Department at Florida Agricultural and Mechanical University in Tallahassee. Over the next decade, she worked, observed, and learned the institution from the inside. She also met and married James Otis Mobley, a young entrepreneur, and together they built a life and business in Tallahassee.</p>
+
+      <h2>Records That Still Stand</h2>
+
+      <p>During a period of profound social unrest and racial tension, Sybil Mobley sat for the graduate school entrance exams of predominantly white institutions and earned top scores. She left Tallahassee for Philadelphia.</p>
+
+      <p>At the Wharton School of Finance at the University of Pennsylvania, she made the Dean&rsquo;s List and completed her Master of Business Administration in record time. She was the first African American to earn an MBA from Wharton. The record for fastest completion still stands.</p>
+
+      <p>She did not stop. From Wharton she matriculated to the University of Illinois at Urbana-Champaign, where she completed her doctoral coursework in accounting in a record one and a half years under the guidance of Robert K. Mautz. In 1963, she became the first African American woman to earn a doctorate in accounting from the University of Illinois. That record also still stands.</p>
+
+      <p>She returned to Tallahassee while simultaneously finishing her dissertation, teaching accounting at FAMU, and studying for and earning her Certified Public Accountant (CPA) license in the State of Florida. She was 37 years old.</p>
+
+      <h2>Building What Didn&rsquo;t Exist</h2>
+
+      <p>There was no business school at FAMU when Sybil Mobley joined the faculty in 1964. There was a Department of Business &mdash; modest, enrollment declining, with 180 students in 1963 &mdash; housed inside the College of Arts and Sciences. She saw something no one else was seeing.</p>
+
+      <p>By 1971 she was Director of the FAMU School of Business. By 1974, she had reorganized, restructured, fundraised, and fought until the Department of Business had been elevated into something entirely new: the School of Business and Industry (SBI) &mdash; with Sybil Collins Mobley as its founding Dean.</p>
+
+      <p>What she built was not a business school in any conventional sense. It was a three-part ecosystem she called the Mobley Model: talented students, outstanding faculty, and a demanding academically relevant program unlike anything that existed. SBI&rsquo;s curriculum fused rigorous academics with a mandatory Professional Leadership Development (PLD) program that taught what elite corporate environments expected but rarely taught: business writing, oratorical skills, executive presence, proper dress and bearing, and the behavioral competencies that separate good students from effective leaders. Every student was required to complete three internships before graduation &mdash; including one international placement.</p>
+
+      <p>She designed the SBI building as a physical declaration of purpose. Its hallways were named for the world&rsquo;s great financial thoroughfares &mdash; Wall Street and its global equivalents. An awards gallery lined the corridors. Outside the entrance stood the &ldquo;Big Board&rdquo; &mdash; a large placard displaying the names of corporate donors, each plaque representing a minimum $100,000 endowment for scholarships. The Big Board would eventually exceed 100 plaques.</p>
+
+      <p>To fund the faculty she needed, she went directly to the Alfred Sloan Foundation in 1976, securing matching grants totaling over $200,000 to hire and retain doctoral-level accounting faculty at a time when state budget cuts threatened to hollow the school out. She personally called and wrote letters to high school guidance counselors, alumni association members, and National Merit Scholars across the country &mdash; recruiting what she called her &ldquo;SBI Superstars&rdquo;: students ranking in the top three to five percent nationally, offered full scholarships in exchange for an uncompromising commitment to excellence.</p>
+
+      <p>She called them a force to be reckoned with. She meant it literally.</p>
+
+      <h2>Corporate America, On Her Terms</h2>
+
+      <p>Dr. Mobley understood something that most business school deans of her era did not: that the relationship between academia and industry could be reversed. Rather than sending students to corporations and hoping for the best, she went to the boardrooms first and told executives what she needed from them.</p>
+
+      <p>She personally recruited the CEOs and human resources leaders of Fortune 500 companies to visit FAMU weekly &mdash; to meet with students and faculty, shape curriculum, donate real case studies for coursework, and offer structured, high-paying internships throughout the year. A 1998 <em>Fortune</em> magazine article noted that she insisted companies also provide summer employment for her faculty, so they remained current with the real world they were teaching.</p>
+
+      <p>Corporate executives described SBI as &ldquo;like a finishing school.&rdquo; Tom Peters, in his bestselling <em>A Passion for Excellence,</em> called it &ldquo;the Marine Corps of business schools: pride, poise, excellence.&rdquo; A front-page <em>New York Times</em> article declared SBI &ldquo;in the top five business schools&rdquo; and reported that &ldquo;major American companies say the top business schools would do well to emulate&rdquo; it &mdash; a story reprinted in more than 100 newspapers nationwide. <em>Newsweek,</em> the <em>Wall Street Journal,</em> the <em>Baltimore Afro-American, U.S. News &amp; World Report,</em> and <em>Florida Trend Magazine</em> all followed. SBI graduates worked in 60 countries across every sector of the global economy.</p>
+
+      <p>The companies that flew their executives to Tallahassee eventually asked Dr. Mobley to join their boards. She accepted &mdash; and used every seat at every table in service of her students.</p>
+
+      <p>She served on the boards of directors of Anheuser-Busch Companies, Hershey Foods Corporation, Sears, Roebuck &amp; Company, Champion International Corporation, SBC Corporation, Morgan Stanley Dean Witter, Discover &amp; Company, and Permark International. She was among the very first Black women in America to hold voting power at such institutions. Many became major financial sponsors of SBI. After her death, Hershey Corporation donated an additional $1 million to the Sybil Collins Mobley Endowed Chair in tribute to her board service.</p>
+
+      <p>She also served as Vice President of the American Accounting Association and Vice President of the American Institute of CPAs &mdash; two of the most prestigious positions in her field &mdash; and published more than ten peer-reviewed articles in accounting at the height of her scholarly career.</p>
+
+      <h2>A Vision Without Borders</h2>
+
+      <p>Dr. Mobley&rsquo;s ambition was never contained by the walls of a university. She understood that Black economic empowerment was a global project, and she acted accordingly.</p>
+
+      <p>She served on U.S. Presidential Commissions on Industrial Competitiveness, Minority Business Development, and &ldquo;1000 Points of Light&rdquo; &mdash; advising at the highest levels of federal policy. For many years she served on the consultant panel to the United States Comptroller General.</p>
+
+      <p>As a special consultant to the U.S. Agency for International Development (USAID) and the State Department, she traveled to and worked in Senegal, Nigeria, Zaire, Kenya, Cameroon, Ivory Coast, and Liberia &mdash; helping newly decolonized nations build entrepreneurship frameworks rooted in the same principles she applied at SBI. She also served on the team to establish Africa University in Zimbabwe, one of the first pan-African institutions of higher learning on the continent.</p>
+
+      <p>At home in Tallahassee, she championed the Frenchtown Merchants Association, establishing a $20,000 revolving student loan fund and economic development resources for the historically Black business district adjacent to FAMU. She launched the Gretna Plan for Economic Rehabilitation, connecting SBI students and faculty with Black business owners in rural Gretna &mdash; one of the first HBCU-led rural economic development programs in the nation, covered nationally by <em>Black Enterprise</em> magazine. In 1984, she opened a national training center connecting Black entrepreneurs directly with Fortune 1000 companies &mdash; the first convening of its kind.</p>
+
+      <h2>Recognition, Long Overdue and Well Earned</h2>
+
+      <p>Dr. Mobley served as SBI&rsquo;s founding Dean for 29 years, retiring on June 30, 2003, after 58 years of service to FAMU. Upon her retirement she was named Dean Emerita. In 2007, the four-wing SBI complex was renamed the Dr. Sybil Collins Mobley Business Complex in her honor.</p>
+
+      <p>Seven institutions conferred honorary doctorates upon her &mdash; the same institutions she had first walked through as a student with everything to prove: the Wharton School, Babson College, Bishop College, Hamilton College, Washington University, Princeton University, and the University of Illinois.</p>
+
+      <p>Her portrait hangs in the Florida State Capitol as a member of the Florida Women&rsquo;s Hall of Fame (inducted 1984). Additional honors include:</p>
+
+      <ul class="honors-list">
+        <li>Candace Award &mdash; National Coalition of 100 Black Women, 1982</li>
+        <li>FAMU Lifetime Achievement Award &mdash; 2009</li>
+        <li>Accounting Hall of Fame &mdash; American Accounting Association, 2021 (posthumous)</li>
+        <li>Vice President, American Accounting Association</li>
+        <li>Vice President, American Institute of CPAs</li>
+        <li>Member, Alpha Kappa Alpha Sorority, Inc.</li>
+        <li>Member, National Association of Black Accountants</li>
+        <li>Member, International Association of Black Business Educators (IABBE)</li>
+        <li>Board of Trustees, Committee for Economic Development (CED)</li>
+      </ul>
+
+      <h2>In Her Own Words</h2>
 
       <div class="pullquote">
         <blockquote>&ldquo;No excuse is acceptable. No amount of effort is adequate until proven effective.&rdquo;</blockquote>
         <cite>&mdash; Dr. Sybil C. Mobley, to every class she taught</cite>
       </div>
 
-      <h2>National Reach, Corporate Influence</h2>
+      <p>She did not say it once. She said it until it became the standard &mdash; carried out of Tallahassee by every student she recruited, mentored, and launched into the world. Erica Crenshaw, one of those students, wrote years later: &ldquo;This is a quote that all SBIans were expected to live up to as they prepared to enter the world of business. However, this quote transcends business into everyday life. To this day, it&rsquo;s always in the back of my mind.&rdquo;</p>
 
-      <p>As SBI grew, so did Dr. Mobley&rsquo;s presence in American business. She served on the boards of seven Fortune 500 companies during a career in which the combination of her identity and her credentials was essentially unprecedented. She advised the U.S. government on educational and economic development initiatives across Africa. She consulted with universities and corporations seeking to replicate what she had built in Tallahassee &mdash; though few ever succeeded at doing so fully, because the model was not a formula. It was her.</p>
-
-      <p>Corporate partners came to FAMU because she made them come. Recruiters flew to Tallahassee because she made sure her students were worth the trip. And they were. Year after year, SBI graduates outperformed their peers from far wealthier institutions on every measure that mattered: hire rates, starting salaries, long-term career advancement, and leadership ascension.</p>
-
-      <h2>A Teacher, First</h2>
-
-      <p>For all her national stature, she never stopped being a teacher. She knew her students by name. She knew their parents. She knew who had arrived at Florida A&amp;M with doubts, and she made sure those doubts did not survive the first semester. The standard she set was high. The belief she carried in the students who met it was higher. Generations of leaders have said, in interviews, in memorials, and in quiet conversations across decades, that whatever they became, they became partly because she refused to let them settle for less.</p>
-
-      <p>She retired in 2003 as Dean Emerita, having led SBI from its founding through nearly three decades of growth. By then, the school had educated thousands of students, placed them in the highest levels of American business, and established itself as one of the most respected undergraduate business programs in the country &mdash; at an HBCU, in the American South, with a woman at its helm the entire way.</p>
-
-      <h2>Recognition</h2>
-
-      <p>Over the course of her career, Dr. Mobley received honors from universities, corporations, civic organizations, and every level of American government &mdash; including acknowledgment from the White House for her contributions to business education and to the country. She was elected to leadership positions in professional associations long closed to people who looked like her. She received honorary doctorates. She was inducted into business and educational halls of fame. And still, among those who knew her, she was most famous for never pausing on any of it &mdash; because the students, she would say, were still coming.</p>
-
-      <h2>Legacy</h2>
-
-      <p>Dr. Sybil Collins Mobley passed away on September 29, 2015. She was 89 years old. Tributes poured in from across business, academia, and government &mdash; from CEOs she had mentored, from presidents she had advised, and from students she had taught who were now leading the institutions she had once helped them enter.</p>
-
-      <p>The Sybil C. Mobley Legacy Project exists to carry her work forward. Not as a memorial. As a mandate. The standard she set &mdash; that excellence is not negotiable, that access is only half the work, and that no excuse is acceptable &mdash; remains the standard by which the Legacy Project operates, the programs it supports, and the next generation of leaders it is committed to training.</p>
-
-      <p>She built something that has outlived her. It was designed to.</p>
+      <p>That is the measure of Dr. Sybil Collins Mobley. Not the boards she sat on. Not the records she broke. Not the building that bears her name. The measure is the standard she set &mdash; and the thousands of people still holding themselves to it.</p>
 
     </div>
   </section>
@@ -587,6 +669,7 @@
           <h4>Explore</h4>
           <ul>
             <li><a href="index.html#about">About Dr. Mobley</a></li>
+            <li><a href="biography.html">Biography</a></li>
             <li><a href="index.html#mission">Mission &amp; Vision</a></li>
             <li><a href="index.html#programs">Programs</a></li>
             <li><a href="index.html#support">Support</a></li>
@@ -595,9 +678,10 @@
         <div class="footer__col">
           <h4>Connect</h4>
           <ul>
-            <li><a href="index.html#contact">Contact &mdash; coming soon</a></li>
-            <li><a href="#">Press &amp; Media</a></li>
-            <li><a href="#">Newsletter</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="partners.html">Legacy Partners</a></li>
+            <li><a href="#">Press &amp; Media &mdash; coming soon</a></li>
+            <li><a href="#">Newsletter &mdash; coming soon</a></li>
           </ul>
         </div>
       </div>
