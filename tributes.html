@@ -157,7 +157,61 @@
       border-color: var(--harvest);
     }
     .header__cta { padding: 10px 20px; font-size: 12px; }
-    @media (max-width: 960px) { nav { display: none; } }
+    /* hamburger menu (mobile only) */
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      width: 30px;
+      height: 22px;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 2.5px;
+      background: var(--forest-deep);
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.2s ease;
+      transform-origin: center;
+    }
+    .menu-toggle.is-open span:nth-child(1) { transform: translateY(9.75px) rotate(45deg); }
+    .menu-toggle.is-open span:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-open span:nth-child(3) { transform: translateY(-9.75px) rotate(-45deg); }
+    .mobile-menu {
+      display: none;
+      background: var(--cream);
+      border-top: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 3px solid var(--gold);
+    }
+    .mobile-menu.is-open { display: block; }
+    .mobile-menu ul { list-style: none; padding: 8px 0; margin: 0; }
+    .mobile-menu li { border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .mobile-menu li:last-child { border-bottom: 0; }
+    .mobile-menu a {
+      display: block;
+      padding: 18px 24px;
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--forest-deep);
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .mobile-menu a:hover,
+    .mobile-menu a.current { background: var(--cream-deep); color: var(--harvest); }
+    .mobile-menu a.nav-cta { color: var(--harvest); }
+    .mobile-menu a.nav-cta.current { background: var(--harvest); color: var(--cream); }
+
+    @media (max-width: 960px) {
+      nav { display: none; }
+      .menu-toggle { display: flex; }
+    }
 
     /* ---------- Tributes Hero ---------- */
     .tributes-hero {
@@ -601,11 +655,24 @@
       <nav>
         <ul>
           <li><a href="biography.html">Biography</a></li>
+          <li><a href="index.html#programs">Programs</a></li>
           <li><a href="tributes.html" class="current">Tributes</a></li>
           <li><a href="partners.html" class="nav-cta">Legacy Partners</a></li>
           <li><a href="contact.html" class="nav-cta">Contact</a></li>
         </ul>
       </nav>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul>
+        <li><a href="biography.html">Biography</a></li>
+        <li><a href="index.html#programs">Programs</a></li>
+        <li><a href="tributes.html" class="current">Tributes</a></li>
+        <li><a href="partners.html" class="nav-cta">Legacy Partners</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
     </div>
   </header>
 
@@ -781,6 +848,29 @@
       });
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // mobile menu toggle
+    (function() {
+      const toggle = document.querySelector('.menu-toggle');
+      const menu = document.getElementById('mobile-menu');
+      if (!toggle || !menu) return;
+      function closeMenu() {
+        toggle.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('aria-hidden', 'true');
+        toggle.classList.remove('is-open');
+        menu.classList.remove('is-open');
+      }
+      toggle.addEventListener('click', function() {
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!isOpen));
+        menu.setAttribute('aria-hidden', String(isOpen));
+        toggle.classList.toggle('is-open');
+        menu.classList.toggle('is-open');
+      });
+      menu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+    })();
   </script>
 </body>
 </html>
