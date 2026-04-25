@@ -8,6 +8,8 @@
   <meta property="og:title" content="Get In Touch — The Sybil C. Mobley Legacy Project">
   <meta property="og:description" content="Contact The Sybil C. Mobley Legacy Project.">
   <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="mobley-logo.png">
+  <link rel="apple-touch-icon" href="mobley-logo.png">
   <style>
     :root {
       --forest: #1A5C2A;
@@ -122,42 +124,26 @@
       gap: 14px;
     }
     .brand__mark {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--forest);
-      color: var(--gold);
-      display: grid;
-      place-items: center;
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 700;
-      font-size: 20px;
-      border: 2px solid var(--gold);
-    }
-    .brand__name {
-      font-family: var(--sans);
-      font-weight: 700;
-      font-size: 15px;
-      letter-spacing: 0.02em;
-      color: var(--forest-deep);
-      line-height: 1.2;
-    }
-    .brand__name span {
+      height: 52px;
+      width: auto;
       display: block;
+      flex-shrink: 0;
+    }
+    .brand__tagline {
       font-family: var(--serif);
       font-style: italic;
       font-weight: 400;
-      font-size: 12px;
+      font-size: 13px;
       color: var(--gray);
-      margin-top: 2px;
-      letter-spacing: 0;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
     }
 
     nav ul {
       display: flex;
+      align-items: center;
       list-style: none;
-      gap: 22px;
+      gap: 26px;
     }
     nav a {
       font-size: 13px;
@@ -166,6 +152,20 @@
       color: var(--charcoal);
     }
     nav a.current { color: var(--harvest); }
+
+    nav a.nav-cta {
+      border: 1.5px solid var(--harvest);
+      padding: 8px 18px;
+      border-radius: 100px;
+      color: var(--harvest);
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+    nav a.nav-cta:hover,
+    nav a.nav-cta.current {
+      background: var(--harvest);
+      color: var(--cream);
+      border-color: var(--harvest);
+    }
 
     .header__cta {
       padding: 10px 20px;
@@ -461,20 +461,17 @@
   <header>
     <div class="container header__inner">
       <a href="index.html" class="brand" style="text-decoration:none;">
-        <div class="brand__mark">M</div>
-        <div class="brand__name">The Sybil C. Mobley Legacy Project<span>Legacy. Lived Forward.</span></div>
+        <img src="mobley-logo.png" alt="The Sybil C. Mobley Legacy Project" class="brand__mark">
+        <div class="brand__tagline">Legacy. Lived Forward.</div>
       </a>
       <nav>
         <ul>
-          <li><a href="index.html#about">About</a></li>
           <li><a href="biography.html">Biography</a></li>
           <li><a href="tributes.html">Tributes</a></li>
-          <li><a href="index.html#programs">Programs</a></li>
-          <li><a href="partners.html">Legacy Partners</a></li>
-          <li><a href="contact.html" class="current">Contact</a></li>
+          <li><a href="partners.html" class="nav-cta">Legacy Partners</a></li>
+          <li><a href="contact.html" class="nav-cta current">Contact</a></li>
         </ul>
       </nav>
-      <a href="index.html#support" class="btn btn--primary header__cta">Support the Legacy</a>
     </div>
   </header>
 
